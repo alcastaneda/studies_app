@@ -1,14 +1,4 @@
 Rails.application.routes.draw do
-  get 'studies/show'
-
-  get 'studies/new'
-
-  get 'studies/create'
-
-  get 'participants/new'
-
-  get 'participants/create'
-
   root 'sites#index'
 
  resources :sites, only: [:index, :show, :new, :create]
