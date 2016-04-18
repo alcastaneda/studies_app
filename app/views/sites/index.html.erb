@@ -1,0 +1,9 @@
+<%= @sites.each do |site| %>
+    <div>
+        <ul>
+          <li><%= site.name %></li>
+          <li><%= site.location %></li>
+          <li><%= link_to "#{site.name}", site %></li>
+        </ul>
+    </div>
+<% end %>

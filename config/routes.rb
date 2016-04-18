@@ -1,4 +1,20 @@
 Rails.application.routes.draw do
+  get 'studies/show'
+
+  get 'studies/new'
+
+  get 'studies/create'
+
+  get 'participants/new'
+
+  get 'participants/create'
+
+  root 'sites#index'
+
+ resources :sites, only: [:index, :show, :new, :create]
+ resources :participants, only: [:new, :create]
+ resources :studies, only: [:show, :new, :create]
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
