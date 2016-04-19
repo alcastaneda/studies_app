@@ -1,10 +1,12 @@
 class SitesController < ApplicationController
   def index
+    @site= Site.new
     @sites=Site.all
   end
 
   def show
     @site=Site.find(params[:id])
+    @studies= @site.studies
   end
 
   def new

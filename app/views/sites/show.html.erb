@@ -1,2 +1,18 @@
 <h1><%= @site.name %></h1>
-<p><%= @site.location %></p>
+<p>Location: <%= @site.location %></p>
+
+<ul>
+  <li><%= link_to 'Participate in a Study', new_site_study_path(@site) %></li>
+</ul>
+<h3>Studies</h3>
+<table>
+  <% @studies.each do |study| %>
+    <tr>
+      <td><%= link_to "#{study.title}", study_path(study) %></td>
+      <td><%= study.investigator_name %></td>
+      <td><%= study.status %></td>
+    </tr>
+  <% end %>
+</table>
+
+

@@ -3,6 +3,7 @@ class CreateEnrollments < ActiveRecord::Migration
     create_table :enrollments do |t|
       t.integer :study_id
       t.integer :participant_id
+      t.integer :site_id
 
       t.timestamps null: false
     end

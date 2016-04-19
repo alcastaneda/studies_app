@@ -7,12 +7,16 @@ require "faker"
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-status = [true, false]
+status = ["Active", "Closed"]
 gender = ["female", "male"]
 
 10.times do |i|
   Study.create(title: Faker::Company.catch_phrase, investigator_name: Faker::Name.name, status: status.sample)
-  Site.create(name: Faker::Company.name, location: Faker::Address.city)
-  Participant.create(name: Faker::Name.name, gender: gender.sample, birthdate: Faker::Time.between(DateTime.now - 10, DateTime.now), address: Faker::Address.street_address)
-  Enrollment.create(study_id: rand(10) , participant_id: rand(5))
+  Site.create(name: Faker::Team.name, location: Faker::Address.city)
+  Participant.create(name: Faker::Name.name, gender: gender.sample, birthdate: Faker::Date.between(50.year.ago, Date.today), address: Faker::Address.street_address)
+end
+
+50.times do |i|
+  StudySiteJoin.create(site_id: rand(10), study_id: rand(10))
+  Enrollment.create(study_id: rand(10), participant_id: rand(10), site_id: rand(10))
 end

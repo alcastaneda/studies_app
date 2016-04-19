@@ -1,0 +1,8 @@
+<h1>Participate in a Study</h1>
+<%= form_for @study_site, url: site_studies_path(@study_site) do |f| %>
+  <%= hidden_field_tag "site_id", @site.id %>
+  <%= f.label :study_id, "Study" %>
+  <%= f.collection_select :study_id, Study.where(status: "Active").order(:title),:id,:title %><br>
+
+  <%= f.submit %>
+<% end %>

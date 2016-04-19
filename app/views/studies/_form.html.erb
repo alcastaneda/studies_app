@@ -1,0 +1,12 @@
+<%= form_for(@study) do |f| %>
+  <%= f.label :title %>
+  <%= f.text_field :title %><br>
+
+  <%= f.label :investigator_name %>
+  <%= f.text_field :investigator_name %><br>
+
+  <%= label :status, "Status" %>
+  <%= f.select(:status, options_for_select([['Active', 'Active'], ['Closed', 'Closed']])) %>
+
+  <%= f.submit %>
+<% end %>

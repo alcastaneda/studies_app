@@ -7,7 +7,13 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-
+<nav>
+  <ul>
+    <li><%= link_to 'Sites', sites_path%></li>
+    <li><%= link_to 'Studies', studies_path%></li>
+    <li><%= link_to 'Participants', participants_path %></li>
+  </ul>
+</nav>
 <%= yield %>
 
 </body>

@@ -1,0 +1,13 @@
+<h1>Studies</h1>
+
+<h3>Create a study</h3>
+<%= render 'form' %>
+
+
+<% @studies.each do |study| %>
+   <ul>
+      <li><%= study.title %></li>
+      <li><%= study.investigator_name %></li>
+      <li><%= study.status %></li>
+    </ul>
+<% end %>

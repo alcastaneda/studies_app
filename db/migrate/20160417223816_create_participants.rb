@@ -3,7 +3,7 @@ class CreateParticipants < ActiveRecord::Migration
     create_table :participants do |t|
       t.string :name
       t.string :gender
-      t.datetime :birthdate
+      t.date :birthdate
       t.string :address
 
       t.timestamps null: false

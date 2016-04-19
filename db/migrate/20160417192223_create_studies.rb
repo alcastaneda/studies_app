@@ -3,7 +3,7 @@ class CreateStudies < ActiveRecord::Migration
     create_table :studies do |t|
       t.string :title
       t.string :investigator_name
-      t.boolean :status
+      t.string :status
 
       t.timestamps null: false
     end

@@ -1,0 +1,10 @@
+<h3>Enroll Participant for <%= @study.title %></h3>
+<%= form_for @enrollment do |f| %>
+  <%= hidden_field_tag "study_id", @study.id %>
+  <%= f.label :participant_id, "Participant" %>
+  <%= f.collection_select :participant_id, Participant.order(:name),:id,:name %><br>
+  <%= f.label :site_id, "Site" %>
+  <%= f.collection_select :site_id, @study.sites.order(:name),:id,:name %><br>
+
+  <%= f.submit %>
+<% end %>

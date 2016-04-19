@@ -1,0 +1,12 @@
+<%= form_for(@participant) do |f| %>
+  <%= f.label :name %>
+  <%= f.text_field :name %><br>
+
+  <%= f.label :gender %>
+  <%= f.select(:gender, options_for_select([['male', 'male'], ['female', 'female']])) %>
+
+  <%= f.label :birthdate %>
+  <%= f.date_field :birthdate %><br>
+
+  <%= f.submit %>
+<% end %>

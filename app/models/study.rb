@@ -1,6 +1,6 @@
 class Study < ActiveRecord::Base
   has_many :study_site_joins
-  has_many :sites, through: :study_site_join
+  has_many :sites, through: :study_site_joins
   has_many :enrollments
   has_many :participants, through: :enrollments
 

@@ -1,0 +1,21 @@
+<h1><%= @study.title %></h1>
+
+<p><%=@study.investigator_name %></p>
+<p><%=@study.status %></p>
+
+  <% if @study.status == "Active" %>
+      <td><%= link_to "Enroll a participant", new_enrollment_path(@study.id) %></td>
+  <% end %>
+
+<h3>Participants</h3>
+<% @participants.each do |participant| %>
+  <ul>
+    <li>Name:<%= participant.name %></li>
+    <li>Gender:<%= participant.gender %></li>
+    <li>Birthdate:<%= participant.birthdate %></li>
+    <li>Address:<%= participant.address %></li>
+    <% participant.enrollments.where(study_id: @study.id).each do |enrollment| %>
+      <li>Site:<%= enrollment.site.name %></li>
+    <%end%>
+  </ul>
+<% end %>

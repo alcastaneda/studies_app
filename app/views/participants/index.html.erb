@@ -1,0 +1,13 @@
+<h1>Participants</h1>
+
+<h3>Create a Participant</h3>
+<%= render 'form' %>
+
+<% @participants.each do |participant| %>
+  <ul>
+    <li>Name: <%= participant.name %></li>
+    <li>Gender:<%= participant.gender %></li>
+    <li>Birthdate:<%= participant.birthdate %></li>
+    <li>Address:<%= participant.address %></li>
+  </ul>
+<% end %>

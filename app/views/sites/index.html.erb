@@ -1,9 +1,13 @@
-<%= @sites.each do |site| %>
+<h1>Sites</h1>
+
+<h3>Create a Site</h3>
+<%= render 'form' %>
+
+<% @sites.each do |site| %>
     <div>
         <ul>
-          <li><%= site.name %></li>
-          <li><%= site.location %></li>
-          <li><%= link_to "#{site.name}", site %></li>
+          <li>Name: <%= link_to "#{site.name}", site %></li>
+          <li>Location: <%= site.location %></li>
         </ul>
     </div>
 <% end %>

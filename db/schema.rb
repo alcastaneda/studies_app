@@ -19,6 +19,7 @@ ActiveRecord::Schema.define(version: 20160417225601) do
   create_table "enrollments", force: :cascade do |t|
     t.integer  "study_id"
     t.integer  "participant_id"
+    t.integer  "site_id"
     t.datetime "created_at",     null: false
     t.datetime "updated_at",     null: false
   end
@@ -26,7 +27,7 @@ ActiveRecord::Schema.define(version: 20160417225601) do
   create_table "participants", force: :cascade do |t|
     t.string   "name"
     t.string   "gender"
-    t.datetime "birthdate"
+    t.date     "birthdate"
     t.string   "address"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -42,7 +43,7 @@ ActiveRecord::Schema.define(version: 20160417225601) do
   create_table "studies", force: :cascade do |t|
     t.string   "title"
     t.string   "investigator_name"
-    t.boolean  "status"
+    t.string   "status"
     t.datetime "created_at",        null: false
     t.datetime "updated_at",        null: false
   end
